@@ -18,7 +18,8 @@ Here is the pseudo code for the k-means clustering algorithm:<br>
 In this implementation, X is the data matrix with each row representing a data point, k is the number of clusters, and max_iter is the maximum number of iterations to run the algorithm. The function returns the cluster labels for each data point and the final centroids for each cluster. The initial cluster representatives are selected randomly.<br>
 The code loads the data into a pandas DataFrame, extracts the feature columns as a numpy array, and then calls the k_means function with k=5 and max_iter=100. Finally, it prints the cluster labels and the final centroids returned by the k_means function. Note that the initial cluster representatives are selected randomly by the k_means function.<br>
 
-<h2>Kmeans++ Algorithm</h2>
+<h2>Kmeans++ Clustering Algorithm</h2>
+<br>
 k-Means++ is an algorithm used to initialize the centroids in the k-means clustering algorithm. The goal of the k-means++ algorithm is to select the initial centroids in a way that improves the chances of obtaining a better clustering result.<br>
 The k-means++ algorithm works as follows:
 <ol>
@@ -40,7 +41,8 @@ Here is the pseudo code for the K-means++ algorithm:
 <dl>
 In the implementation, we first initialize the first cluster centre randomly by selecting a data point at random from the dataset. Then, we iterate k - 1 times, where k is the number of clusters we want to generate. In each iteration, we compute the squared distances to the nearest cluster centre for each data point and then select the next cluster centre from the data points with probability proportional to the squared distance. Finally, we run the standard k-means algorithm with the k initial cluster centres selected above.<br>
 
-<h2>Bisecting Kmeans</h2>
+<h2>Bisecting Kmeans Clustering Algorithm</h2>
+<br>
 Bisecting k-Means is a hierarchical clustering algorithm that starts with all data points as a single cluster and recursively splits the clusters into two sub-clusters until the desired number of clusters is reached. At each iteration, the algorithm selects the cluster with the largest sum of squared distances (SSE) and applies the k-Means algorithm to bisect it into two new clusters.
 The k-Means algorithm assigns each point in the selected cluster to the nearest of the two cluster centroids and iteratively updates the centroids until convergence. The two resulting sub-clusters are added to the cluster list, and the original cluster is removed. The algorithm repeats this process on the newly added clusters until the desired number of clusters is reached.
 Unlike other hierarchical clustering algorithms, Bisecting k-Means always produces a binary tree of clusters, and it can be faster than traditional hierarchical clustering methods for large datasets. However, it can suffer from sensitivity to initial conditions and can produce unbalanced trees if the data is not well-suited for binary splitting.
